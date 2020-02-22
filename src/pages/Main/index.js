@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 import api from '../../services/api';
 
-import { Container, Form, SubmitButton, List } from './styles';
+import Container from '../../components/Container';
+import { Form, SubmitButton, List } from './styles';
 
 export default class Main extends Component {
   state = {
@@ -47,7 +48,7 @@ export default class Main extends Component {
   };
 
   // Salvar los datos en localStorage
-  componentDipUpdate(_, prevState) {
+  componentDidUpdate(_, prevState) {
     const { repositories } = this.state;
 
     if (prevState.repositories !== repositories) {
